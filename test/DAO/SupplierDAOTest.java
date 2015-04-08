@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Shermaine
+ * @author Gerard
  */
 public class SupplierDAOTest {
     
@@ -42,7 +42,7 @@ public class SupplierDAOTest {
     /**
      * Test of addSupplier method, of class SupplierDAO.
      */
-    @Test
+    /*@Test
     public void testAddSupplier() {
         System.out.println("addSupplier");
         SupplierBean supplier = null;
@@ -53,24 +53,35 @@ public class SupplierDAOTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
+    */
     /**
      * Test of getAllSuppliers method, of class SupplierDAO.
      */
     @Test
     public void testGetAllSuppliers() throws Exception {
-        System.out.println("getAllSuppliers");
-        SupplierDAO instance = new SupplierDAO();
-        ArrayList<SupplierBean> expResult = null;
-        ArrayList<SupplierBean> result = instance.getAllSuppliers();
-        assertEquals(expResult, result);
+        
+        SupplierBean supplierBean = new SupplierBean("Shermaine", "15 Twinster town hall", "1234", "09064643073", "phil", "shermaine@yahoo.com", "shermainbe", "sy", "09064643073", "sher@yahoo.com" );
+        
+        SupplierDAO supplierDAO = new SupplierDAO();
+        
+        supplierDAO.addSupplier(supplierBean);
+        
+        
+        SupplierBean test = new SupplierBean();
+         test = supplierDAO.getSupplier(10);
+        System.out.println("before test");
+        assertEquals(supplierBean, test);
+        System.out.println("Passed");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
+    
+    
 
     /**
      * Test of getSupplier method, of class SupplierDAO.
      */
+    /*
     @Test
     public void testGetSupplier() {
         System.out.println("getSupplier");
@@ -82,5 +93,5 @@ public class SupplierDAOTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+    */
 }

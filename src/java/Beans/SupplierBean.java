@@ -22,6 +22,8 @@ public class SupplierBean {
     private String supplierCPLastName;
     private String supplierCPEmail;
 
+    public SupplierBean(){
+    }
     public SupplierBean( int supplierID, String supplierName,  String supplierAddress, String supplierZipCode, String supplierPhone, String supplierCountry, String supplierEmail, String supplierCPPhone, String supplierCPFirstName, String supplierCPLastName, String supplierCPEmail) {
         this.supplierID = supplierID;
         this.supplierName = supplierName;
@@ -145,6 +147,31 @@ public class SupplierBean {
 
     public void setSupplierPhone(String supplierPhone) {
         this.supplierPhone = supplierPhone;
+    }
+    
+    //this is a test
+    @Override
+    public boolean Equals(Object supplierBean){
+        boolean test = false;
+        //SupplierBean supplierbean = (SupplierBean) ;
+      
+        if (this.supplierID == supplierBean.getSupplierID()
+                && this.supplierName == supplierBean.getSupplierName()
+                && this.supplierZipCode.equalsIgnoreCase(supplierBean.getSupplierZipCode())
+                && this.supplierPhone.equalsIgnoreCase(supplierBean.getSupplierPhone())
+                && this.supplierCountry.equalsIgnoreCase(supplierBean.getSupplierCountry())
+                && this.supplierEmail.equalsIgnoreCase(supplierBean.getSupplierEmail())
+                && this.supplierCPPhone.equalsIgnoreCase(supplierBean.getSupplierCPPhone())
+                && this.supplierCPFirstName.equalsIgnoreCase(supplierBean.getSupplierCPFirstName())
+                && this.supplierCPLastName.equalsIgnoreCase(supplierBean.getSupplierCPLastName())
+                && this.supplierCPEmail.equalsIgnoreCase(supplierBean.getSupplierCPEmail())
+                
+                )      
+        return true;
+        
+        
+        
+        return test;
     }
     
     
