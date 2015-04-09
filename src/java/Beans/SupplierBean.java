@@ -147,9 +147,9 @@ public class SupplierBean {
     public boolean equals(Object supplierBean) {
         SupplierBean supplierbean1 = (SupplierBean) supplierBean;
 
-     //supplierbean1.getSupplierID() == this.getSupplierID()
-       //         &&
-        if ( supplierbean1.getSupplierName().equalsIgnoreCase(this.getSupplierName())
+    
+        if ( supplierbean1.getSupplierID() == this.getSupplierID()
+                && supplierbean1.getSupplierName().equalsIgnoreCase(this.getSupplierName())
                 && supplierbean1.getSupplierZipCode().equalsIgnoreCase(this.getSupplierZipCode())
                 && supplierbean1.getSupplierPhone().equalsIgnoreCase(this.getSupplierPhone())
                 && supplierbean1.getSupplierCountry().equalsIgnoreCase(this.getSupplierCountry())
