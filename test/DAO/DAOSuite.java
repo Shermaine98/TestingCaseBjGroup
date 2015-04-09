@@ -17,7 +17,7 @@ import org.junit.runners.Suite;
  * @author Shermaine
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({DAO.ItemDAOTest.class, DAO.LoginDAOTest.class, DAO.ClientDAOTest.class, DAO.SupplierDAOTest.class, DAO.ProcureDAOTest.class})
+@Suite.SuiteClasses({DAO.ItemDAOTest.class, DAO.LoginDAOTest.class, DAO.SupplierDAOTest.class, DAO.ProcureDAOTest.class})
 public class DAOSuite {
 
     @BeforeClass

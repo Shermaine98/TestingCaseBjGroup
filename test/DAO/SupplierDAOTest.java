@@ -6,6 +6,7 @@
 package DAO;
 
 import Beans.SupplierBean;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -42,18 +43,26 @@ public class SupplierDAOTest {
     /**
      * Test of addSupplier method, of class SupplierDAO.
      */
-    /*@Test
-    public void testAddSupplier() {
-        System.out.println("addSupplier");
-        SupplierBean supplier = null;
-        SupplierDAO instance = new SupplierDAO();
-        boolean expResult = false;
-        boolean result = instance.addSupplier(supplier);
-        assertEquals(expResult, result);
+    
+    @Test
+    public void testAddSupplier() throws SQLException {
+        SupplierBean supplierBean = new SupplierBean("Shermaine", "15 Twinster town hall", "1234", "09064643073", "phil", "shermaine@yahoo.com", "shermainbe", "sy", "09064643073", "sher@yahoo.com" );
+        
+        SupplierDAO supplierDAO = new SupplierDAO();
+        supplierDAO.addSupplier(supplierBean);
+        
+        SupplierBean test = new SupplierBean();
+        int lastObject = supplierDAO.getAllSuppliers().size()-1;
+        supplierBean.setSupplierID(supplierDAO.getAllSuppliers().get(lastObject).getSupplierID());
+       
+        test = supplierDAO.getAllSuppliers().get(lastObject);
+
+        assertEquals(supplierBean, test);
+        System.out.println("Passed");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      //  fail("The test case is a prototype.");
     }
-    */
+    
     /**
      * Test of getAllSuppliers method, of class SupplierDAO.
      */
@@ -63,13 +72,14 @@ public class SupplierDAOTest {
         SupplierBean supplierBean = new SupplierBean("Shermaine", "15 Twinster town hall", "1234", "09064643073", "phil", "shermaine@yahoo.com", "shermainbe", "sy", "09064643073", "sher@yahoo.com" );
         
         SupplierDAO supplierDAO = new SupplierDAO();
-        
         supplierDAO.addSupplier(supplierBean);
         
-        
         SupplierBean test = new SupplierBean();
-         test = supplierDAO.getSupplier(10);
-        System.out.println("before test");
+        int lastObject = supplierDAO.getAllSuppliers().size()-1;
+        supplierBean.setSupplierID(supplierDAO.getAllSuppliers().get(lastObject).getSupplierID());
+       
+        test = supplierDAO.getAllSuppliers().get(lastObject);
+        
         assertEquals(supplierBean, test);
         System.out.println("Passed");
         // TODO review the generated test code and remove the default call to fail.

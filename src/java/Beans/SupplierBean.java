@@ -10,6 +10,7 @@ package Beans;
  * @author colleensasoy
  */
 public class SupplierBean {
+
     private int supplierID;
     private String supplierName;
     private String supplierAddress;
@@ -22,9 +23,10 @@ public class SupplierBean {
     private String supplierCPLastName;
     private String supplierCPEmail;
 
-    public SupplierBean(){
+    public SupplierBean() {
     }
-    public SupplierBean( int supplierID, String supplierName,  String supplierAddress, String supplierZipCode, String supplierPhone, String supplierCountry, String supplierEmail, String supplierCPPhone, String supplierCPFirstName, String supplierCPLastName, String supplierCPEmail) {
+
+    public SupplierBean(int supplierID, String supplierName, String supplierAddress, String supplierZipCode, String supplierPhone, String supplierCountry, String supplierEmail, String supplierCPPhone, String supplierCPFirstName, String supplierCPLastName, String supplierCPEmail) {
         this.supplierID = supplierID;
         this.supplierName = supplierName;
         this.supplierAddress = supplierAddress;
@@ -37,8 +39,8 @@ public class SupplierBean {
         this.supplierCPLastName = supplierCPLastName;
         this.supplierCPEmail = supplierCPEmail;
     }
-    
-    public SupplierBean( String supplierName,  String supplierAddress, String supplierZipCode, String supplierPhone, String supplierCountry, String supplierEmail, String supplierCPPhone, String supplierCPFirstName, String supplierCPLastName, String supplierCPEmail) {
+
+    public SupplierBean(String supplierName, String supplierAddress, String supplierZipCode, String supplierPhone, String supplierCountry, String supplierEmail, String supplierCPPhone, String supplierCPFirstName, String supplierCPLastName, String supplierCPEmail) {
         this.supplierName = supplierName;
         this.supplierAddress = supplierAddress;
         this.supplierZipCode = supplierZipCode;
@@ -51,8 +53,6 @@ public class SupplierBean {
         this.supplierCPEmail = supplierCPEmail;
     }
 
-    
-    
     public String getSupplierAddress() {
         return supplierAddress;
     }
@@ -64,8 +64,6 @@ public class SupplierBean {
     public void setSupplierCPPhone(String supplierCPPhone) {
         this.supplierCPPhone = supplierCPPhone;
     }
-    
-    
 
     public void setSupplierAddress(String supplierAddress) {
         this.supplierAddress = supplierAddress;
@@ -119,9 +117,6 @@ public class SupplierBean {
         this.supplierCPEmail = supplierCPEmail;
     }
 
-
-    
-    
     public int getSupplierID() {
         return supplierID;
     }
@@ -130,7 +125,6 @@ public class SupplierBean {
         this.supplierID = supplierID;
     }
 
-    
     public String getSupplierName() {
         return supplierName;
     }
@@ -139,8 +133,6 @@ public class SupplierBean {
         this.supplierName = supplierName;
     }
 
-
-
     public String getSupplierPhone() {
         return supplierPhone;
     }
@@ -148,32 +140,29 @@ public class SupplierBean {
     public void setSupplierPhone(String supplierPhone) {
         this.supplierPhone = supplierPhone;
     }
-    
+
     //this is a test
+
     @Override
-    public boolean Equals(Object supplierBean){
-        boolean test = false;
-        //SupplierBean supplierbean = (SupplierBean) ;
-      
-        if (this.supplierID == supplierBean.getSupplierID()
-                && this.supplierName == supplierBean.getSupplierName()
-                && this.supplierZipCode.equalsIgnoreCase(supplierBean.getSupplierZipCode())
-                && this.supplierPhone.equalsIgnoreCase(supplierBean.getSupplierPhone())
-                && this.supplierCountry.equalsIgnoreCase(supplierBean.getSupplierCountry())
-                && this.supplierEmail.equalsIgnoreCase(supplierBean.getSupplierEmail())
-                && this.supplierCPPhone.equalsIgnoreCase(supplierBean.getSupplierCPPhone())
-                && this.supplierCPFirstName.equalsIgnoreCase(supplierBean.getSupplierCPFirstName())
-                && this.supplierCPLastName.equalsIgnoreCase(supplierBean.getSupplierCPLastName())
-                && this.supplierCPEmail.equalsIgnoreCase(supplierBean.getSupplierCPEmail())
-                
-                )      
-        return true;
-        
-        
-        
-        return test;
+    public boolean equals(Object supplierBean) {
+        SupplierBean supplierbean1 = (SupplierBean) supplierBean;
+
+     //supplierbean1.getSupplierID() == this.getSupplierID()
+       //         &&
+        if ( supplierbean1.getSupplierName().equalsIgnoreCase(this.getSupplierName())
+                && supplierbean1.getSupplierZipCode().equalsIgnoreCase(this.getSupplierZipCode())
+                && supplierbean1.getSupplierPhone().equalsIgnoreCase(this.getSupplierPhone())
+                && supplierbean1.getSupplierCountry().equalsIgnoreCase(this.getSupplierCountry())
+                && supplierbean1.getSupplierEmail().equalsIgnoreCase(this.getSupplierEmail())
+                && supplierbean1.getSupplierCPPhone().equalsIgnoreCase(this.getSupplierCPPhone())
+                && supplierbean1.getSupplierCPFirstName().equalsIgnoreCase(this.getSupplierCPFirstName())
+                && supplierbean1.getSupplierCPLastName().equalsIgnoreCase(this.getSupplierCPLastName())
+                && supplierbean1.getSupplierCPEmail().equalsIgnoreCase(this.getSupplierCPEmail())) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
-    
-    
-    
+
 }

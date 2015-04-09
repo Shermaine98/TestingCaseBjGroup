@@ -7,7 +7,7 @@ import junit.framework.*;
 import static org.junit.Assert.assertEquals;
 
 
-public class TestCase {
+public class Home {
     @Test
     public void testSumbitForm() throws Exception
     {
