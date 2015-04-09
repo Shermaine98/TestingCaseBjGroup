@@ -51,10 +51,20 @@ public class ItemDAOTest {
        ItemBean test = new ItemBean();
        int lastObject =itemDAO.getAllItems().size()-1;
       
-       itembean.setItemid(itemDAO.getAllItems().get(lastObject).getItemid());
-       
+       itembean.setItemid(itemDAO.getAllItems().get(lastObject).getItemid()); 
        test = itemDAO.getAllItems().get(lastObject);
        
+       System.out.println(itembean.getItemDesc());
+       System.out.println(itembean.getItemName());
+       System.out.println(itembean.getItemPrice());
+       System.out.println(itembean.getItemid());
+       
+       System.out.println(test.getItemDesc());
+       System.out.println(test.getItemName());
+       System.out.println(test.getItemPrice());
+       System.out.println(test.getItemid());
+
+       assertEquals(itembean,test);
        System.out.println("Passed");
 //       System.out.println("addItem");
 //        ItemBean itemBean = null;
